@@ -27,7 +27,7 @@ docker run -d -p 8080:80 \
     --name pgadmin \
     --volume=pgadmin_volume:/pgadmin_data \
     --network=postgis_net \
-    -e PGADMIN_DEFAULT_EMAIL=admin@gmail.com \
-    -e PGADMIN_DEFAULT_PASSWORD=pgadmin_password \
+    -e PGADMIN_DEFAULT_EMAIL=geoadmin@gmail.com \
+    -e PGADMIN_DEFAULT_PASSWORD=geoadmin \
     dpage/pgadmin4
 
