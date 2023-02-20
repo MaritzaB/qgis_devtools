@@ -16,6 +16,7 @@ docker run -d \
     --name postgis01 \
     --volume=postgis_volume:/postgis_data \
     --network=postgis_net \
+    -e POSTGRES_USER=admin \
 	-e POSTGRES_PASSWORD=password \
     -e POSTGRES_DB=metro_cdmx \
     -p 5432:5432 \
