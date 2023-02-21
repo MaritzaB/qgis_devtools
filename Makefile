@@ -10,6 +10,9 @@ clean:
 	docker rm $(shell docker ps -aq)
 	docker network rm postgis_net
 
+deploy:
+	./src/deploy_postgis_db.sh
+
 dump:
 	docker exec -t postgis pg_dumpall \
 	-c --username=admin --no-password \
