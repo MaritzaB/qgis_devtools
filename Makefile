@@ -15,3 +15,6 @@ dump:
 	-c --username=admin --no-password \
 	> /home/usuario/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql
 
+restore:
+	cat /home/usuario/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
+	| docker exec -i postgis psql --username=admin --dbname=metro_cdmx
