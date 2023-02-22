@@ -1,6 +1,6 @@
 volumes:
 	docker volume create --name=postgis_volume
-	docker volume create --name=geoserver_volume
+	docker volume create --name=geoserver_data
 
 network:
 	docker network create postgis_net
@@ -21,3 +21,5 @@ dump:
 restore:
 	cat /home/usuario/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
 	| docker exec -i postgis psql --username=admin --dbname=metro_cdmx
+
+    #--volume=geoserver_data:/opt/geoserver/data/dir \

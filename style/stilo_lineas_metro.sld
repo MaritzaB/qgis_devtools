@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:se="http://www.opengis.net/se">
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se" xmlns:xlink="http://www.w3.org/1999/xlink">
   <NamedLayer>
-    <se:Name>STC_Metro_lineas_cdmx</se:Name>
+    <se:Name>STC_Metro_lineas_utm14n</se:Name>
     <UserStyle>
-      <se:Name>STC_Metro_lineas_cdmx</se:Name>
+      <se:Name>STC_Metro_lineas_utm14n</se:Name>
       <se:FeatureTypeStyle>
         <se:Rule>
           <se:Name>Línea 1</se:Name>
@@ -263,7 +263,32 @@
           </ogc:Filter>
           <se:LineSymbolizer>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#85d63d</se:SvgParameter>
+              <se:SvgParameter name="stroke">#e4a171</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">4</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+              <se:SvgParameter name="stroke-linecap">square</se:SvgParameter>
+            </se:Stroke>
+          </se:LineSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name></se:Name>
+          <se:Description>
+            <se:Title>linea is ''</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:Or>
+              <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>linea</ogc:PropertyName>
+                <ogc:Literal></ogc:Literal>
+              </ogc:PropertyIsEqualTo>
+              <ogc:PropertyIsNull>
+                <ogc:PropertyName>linea</ogc:PropertyName>
+              </ogc:PropertyIsNull>
+            </ogc:Or>
+          </ogc:Filter>
+          <se:LineSymbolizer>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#57e337</se:SvgParameter>
               <se:SvgParameter name="stroke-width">4</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
               <se:SvgParameter name="stroke-linecap">square</se:SvgParameter>

@@ -17,12 +17,18 @@ docker run -itd \
 
 #03 Run GeoServer with Docker
 
-docker run -d -p 80:8080 \
+docker run -d -p 8081:8080 \
     --name geoserver \
-    --volume=geoserver_volume:/geoserver_data \
+    --volume /home/usuario/Documents/GitHub/qgis_devtools/geoserver/:/geoserver_data \
+    --link postgis:postgis \
     --network=postgis_net \
-    -e GEOSERVER_USER=admin \
-    -e GEOSERVER_PASSWORD=geoserver \
-    docker.osgeo.org/geoserver:2.22.0
+    -e GEOSERVER_DATA_DIR=/opt/geoserver/data/dir \
+    -e GEOSERVER_ADMIN_USER=admin \
+    -e GEOSERVER_ADMIN_PASSWORD=geoserver \
+    -e POSTGRES_PORT=5432 \
+    -e POSTGRES_DB=metro_cdmx \
+    -e POSTGRES_USER=admin \
+	-e POSTGRES_PASSWORD=password \
+    kartoza/geoserver:latest
 
-
+# cp geoserver_data/tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml
