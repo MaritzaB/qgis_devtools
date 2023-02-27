@@ -1,6 +1,6 @@
 volumes:
 	docker volume create --name=postgis_volume
-	docker volume create --name=geoserver_data
+	docker volume create --name=geoserver_volume
 
 network:
 	docker network create postgis_net
