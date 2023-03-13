@@ -16,10 +16,10 @@ deploy:
 dump:
 	docker exec -t postgis pg_dumpall \
 	-c --username=admin --no-password \
-	> /home/usuario/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql
+	> $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql
 
 restore:
-	cat /home/usuario/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
+	cat $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
 	| docker exec -i postgis psql --username=admin --dbname=metro_cdmx
 
     #--volume=geoserver_data:/opt/geoserver/data/dir \
