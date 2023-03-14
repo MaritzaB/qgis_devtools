@@ -21,5 +21,3 @@ dump:
 restore:
 	cat $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
 	| docker exec -i postgis psql --username=admin --dbname=metro_cdmx
-
-    #--volume=geoserver_data:/opt/geoserver/data/dir \
