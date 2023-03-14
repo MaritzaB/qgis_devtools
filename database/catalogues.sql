@@ -2,15 +2,30 @@
 
 -- 01 CATALOGO DE MUNICIPIOS
 create table if not exists municipios(
-	id_municipio serial primary key,
+	id_municipio integer not null primary key,
 	municipio varchar(25) not null
 );
 
-insert into municipios(municipio)
+insert into municipios(id_municipio, municipio)
 select
-	distinct municipio 
+	distinct cast(clave_municipio as integer), 
+	 municipio 
 from denue_inegi_09_ di 
-order by municipio;
+order by clave_municipio;
+
+-- UPDATE TABLE
+alter table denue_inegi_09_ rename column clave_municipio to id_municipio;
+alter table denue_inegi_09_ drop column municipio;
+
+-- Sustituye el valor con los datos de la nueva tabla
+update denue_inegi_09_ di  
+	set id_municipio = m.id_municipio
+	from municipios m
+	where di.id_municipio = m.municipio;
+	
+-- Cambia el tipo de datos de esa columna
+alter table denue_inegi_09_ alter column id_municipio type int using id_municipio::int;
+
 -----------------------------------------------
 
 -- 02 CATALOGO DE ACTIVIDADES
