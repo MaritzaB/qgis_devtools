@@ -35,9 +35,28 @@ create table if not exists actividades(
 );
 
 insert into actividades(id_actividad, nombre_actividad)
-select distinct cast(codigo_actividad as integer), nombre_actividad 
+select 
+	distinct 
+		cast(codigo_actividad as integer),
+		nombre_actividad 
 from denue_inegi_09_ di 
 order by codigo_actividad;
+
+-- UPDATE TABLE
+alter table denue_inegi_09_ rename column codigo_actividad to id_actividad;
+alter table denue_inegi_09_ drop column nombre_actividad;
+
+
+-- Sustituye el valor con los datos de la nueva tabla
+update denue_inegi_09_ di 
+	set id_actividad = a.id_actividad 
+	from actividades a
+	where cast(di.id_actividad as integer) = a.id_actividad;
+	
+-- Cambia el tipo de datos de esa columna
+alter table denue_inegi_09_ alter column id_actividad type int using id_actividad::int;
+
+
 -----------------------------------------------
 
 -- 03 CATÁLOGO DE VIALIDADES
@@ -85,9 +104,9 @@ order by tipo_centro_comercial ;
 -- 06 DATOS DE CONTACTO DE ESTABLECIMIENTO
 create table if not exists datos_de_contacto(
 	id_clee varchar(50) not null primary key,
-	telefono varchar(20) not null,
-	correo_electronico varchar(80) not null,
-	pagina_web varchar(100) not null
+	telefono varchar(20),
+	correo_electronico varchar(80),
+	pagina_web varchar(100)
 );
 
 insert into datos_de_contacto(id_clee, telefono, correo_electronico, pagina_web)
@@ -98,69 +117,22 @@ select
 	pagina_web 
 from denue_inegi_09_ di 
 where
-	telefono is not null and correo_electronico is not null and pagina_web is not null
+	telefono is not null or correo_electronico is not null or pagina_web is not null
 order by clee
 -----------------------------------------------
 
 
--- Seleccionar atributos de tabla con solo id de los catálogos
 
-select
-id                     ,
-geom                   ,
-clee                   ,
-nombre_establecimiento ,
-razon_social           ,
-codigo_actividad       ,
-nombre_actividad       ,
-personas_ocupadas      ,
-tipo_vialidad          ,
-nombre_vialidad        ,
-tipo_v_e_1             ,
-nom_v_e_1              ,
-tipo_v_e_2             ,
-nom_v_e_2              ,
-tipo_v_e_3             ,
-nom_v_e_3              ,
-numero_exterior        ,
-letra_exterior         ,
-edificio               ,
-edificio_exterior      ,
-numero_interior        ,
-letra_interior         ,
-tipo_asentamiento      ,
-nombre_asentamiento    ,
-tipo_centro_comercial  ,
-nombre_centro_comercial,
-num_local              ,
-codigo_postal          ,
-clave_entidad          ,
-entidad                ,
-clave_municipio        ,
-t2.id_municipio,
-clave_localidad        ,
-localidad              ,
-ageb                   ,
-manzana                ,
-telefono               ,
-correo_electronico     ,
-pagina_web             ,
-tipounieco             ,
-latitud                ,
-longitud               ,
-fecha_alta
-from denue_inegi_09_ di
-join municipios t2 on di.municipio = t2.municipio;
-
---
-select 
- clee, 
- cast(replace(telefono, ' ', '') as numeric), 
- correo_electronico, 
- pagina_web 
+select distinct clave_municipio , municipio
 from denue_inegi_09_ di 
-where
-telefono is not null and correo_electronico is not null and pagina_web is not null
 
+drop table municipios 
 
-drop table datos_de_contacto 
+select 
+	distinct 
+		cast(codigo_actividad as integer),
+		nombre_actividad 
+from denue_inegi_09_ di 
+order by codigo_actividad;
+
+select count(distinct nombre_actividad) from denue_inegi_09_ di 
