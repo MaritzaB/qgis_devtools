@@ -14,10 +14,10 @@ deploy:
 	./src/deploy_postgis_db.sh
 
 dump:
-	docker exec -t postgis pg_dumpall \
-	-c --username=admin --no-password \
+	docker exec -t postgis pg_dump metro_cdmx \
+	--clean --username=admin --no-password \
 	> $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql
 
 restore:
 	cat $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
-	| docker exec -i postgis psql --username=admin --dbname=metro_cdmx
+	| docker exec -i postgis psql --username=admin --table= denue_inegi_09_ --dbname=metro_cdmx 

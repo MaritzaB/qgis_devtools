@@ -71,6 +71,16 @@ select
 from denue_inegi_09_ di
 where tipo_vialidad is not null 
 order by tipo_vialidad;
+
+-- Sustituye el valor con los datos de la nueva tabla
+update denue_inegi_09_ di 
+	set tipo_vialidad  = v.id_vialidad 
+	from tipos_vialidades v
+	where v.tipo_vialidad  = di.tipo_vialidad ;
+	
+-- Cambia el tipo de datos de esa columna
+alter table denue_inegi_09_ alter column tipo_vialidad type int using tipo_vialidad::int;
+
 -----------------------------------------------
 
 -- 04 TIPOS DE ASENTAMIENTOS
