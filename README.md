@@ -13,3 +13,6 @@ Some videos and material used for this project:
 [Mapping with leaflet](https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet)
 
 [Leaflet course](https://egghead.io/lessons/react-course-introduction-build-maps-with-react-leaflet)
+
+[Node JS application deployment with Docker](https://egghead.io/lessons/docker-course-intro-containerize-full-stack-javascript-applications-with-docker)
+
