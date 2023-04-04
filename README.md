@@ -10,3 +10,6 @@ Some videos and material used for this project:
 
 [Geoserver backup](https://geotalleres.readthedocs.io/es/latest/geoserver-backup/geoserver_backup.html)
 
+[Mapping with leaflet](https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet)
+
+[Leaflet course](https://egghead.io/lessons/react-course-introduction-build-maps-with-react-leaflet)
