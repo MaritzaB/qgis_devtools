@@ -17,3 +17,10 @@ Some videos and material used for this project:
 [Node JS application deployment with Docker](https://egghead.io/lessons/docker-course-intro-containerize-full-stack-javascript-applications-with-docker)
 
 [Repositorio nginx and leaflet with Docker](https://github.com/openfirmware/docker-nginx-leaflet)
+
+[Conteinerize an application with react & Docker (Podría servir el ejemplo de Docker)](https://www.youtube.com/watch?v=vxE3xMgtZaM)
+
+[Dockerizar app frontend](https://www.youtube.com/watch?v=D332DCt4Y5Y)
+
+[Ejemplo el bueno XD](https://medium.com/@rajitha.mail48/create-a-docker-image-of-an-offline-open-street-map-server-9fdedd433cc8)
+
