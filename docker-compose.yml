@@ -27,7 +27,7 @@ services:
     links: 
       - postgis:postgis
     volumes:
-      - /home/maritzee/Documents/GitHub/qgis_devtools/geoserver_backup/geoserver_backup:/opt/geoserver/data_dir
+      - ${PWD}/geoserver_backup/geoserver_backup:/opt/geoserver/data_dir
     env_file:
       - geoserver_variables.env
     networks:
