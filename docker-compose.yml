@@ -20,6 +20,8 @@ services:
       - postgis_net
   
   geoserver:
+    build:
+      context: .
     image: kartoza/geoserver:latest
     container_name: geoserver
     ports:
@@ -27,7 +29,7 @@ services:
     links: 
       - postgis:postgis
     volumes:
-      - ${PWD}/geoserver_backup/geoserver_backup:/opt/geoserver/data_dir
+      - ./geoserver_backup/geoserver_backup:/opt/geoserver/data_dir
     env_file:
       - geoserver_variables.env
     networks:
