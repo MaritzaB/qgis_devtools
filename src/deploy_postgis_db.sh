@@ -22,7 +22,7 @@ docker run -itd \
 
 docker run -d -p 8081:8080 \
     --name geoserver \
-    --volume ${HOME}/Documents/GitHub/qgis_devtools/geoserver_backup:/opt/geoserver/data_dir \
+    --volume=/home/maritzee/Documents/GitHub/qgis_devtools/geoserver_backup/geoserver_backup:/opt/geoserver/data_dir \
     --link postgis:postgis \
     --network=postgis_net \
     -e GEOSERVER_DATA_DIR=/opt/geoserver/data_dir \
