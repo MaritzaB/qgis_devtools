@@ -1,17 +1,16 @@
 <layer>
-  <name>denue_inegi_09_</name>
-  <id>LayerInfoImpl--22309bdb:187b03d5ad3:-7ff8</id>
+  <name>Metrobus_estaciones_utm14n</name>
+  <id>LayerInfoImpl--1d1d675f:187b4049d90:-7fdd</id>
   <type>VECTOR</type>
   <defaultStyle>
     <id>StyleInfoImpl-63de631b:18693cecd82:-8000</id>
   </defaultStyle>
   <resource class="featureType">
-    <id>FeatureTypeInfoImpl--22309bdb:187b03d5ad3:-7ff9</id>
+    <id>FeatureTypeInfoImpl--1d1d675f:187b4049d90:-7fde</id>
   </resource>
   <attribution>
     <logoWidth>0</logoWidth>
     <logoHeight>0</logoHeight>
   </attribution>
-  <dateCreated>2023-04-23 22:34:22.426 UTC</dateCreated>
-  <dateModified>2023-04-24 16:34:03.360 UTC</dateModified>
+  <dateCreated>2023-04-24 17:51:50.398 UTC</dateCreated>
 </layer>
