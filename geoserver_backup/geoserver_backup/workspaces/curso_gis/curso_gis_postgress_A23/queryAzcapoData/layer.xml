@@ -1,0 +1,16 @@
+<layer>
+  <name>queryAzcapoData</name>
+  <id>LayerInfoImpl-3e671594:187f9ad4118:-124e</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-3e671594:187f9ad4118:-124f</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-05-08 04:53:16.259 UTC</dateCreated>
+</layer>
