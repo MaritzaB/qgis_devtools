@@ -1,3 +1,5 @@
+.PHONY: clean dump restore down run
+
 volumes:
 	docker volume create --name=postgis_volume
 	docker volume create --name=geoserver_volume
@@ -21,6 +23,15 @@ dump:
 # Es necesario hacer el `make restore` cada vez que levantemos los contenedores,
 # de lo contrario, el geoserver no encontrará los datos de las capas (layers).
 
+down:
+	docker-compose down
+
 restore:
 	cat $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
 	| docker exec -i postgis psql --username=admin --table= denue_inegi_09_ --dbname=metro_cdmx 
+
+run:
+	docker-compose up -d
+	sleep 3s
+
+up: run restore
