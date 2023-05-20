@@ -32,6 +32,6 @@ restore:
 
 run:
 	docker-compose up -d
-	sleep 3s
+	sleep 5s
 
 up: run restore

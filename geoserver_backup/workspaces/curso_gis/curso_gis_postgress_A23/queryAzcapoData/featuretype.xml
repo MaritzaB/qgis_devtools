@@ -52,11 +52,13 @@
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
         <name>queryAzcapoData</name>
-        <sql>select id, geom, nom_estab, latitud, longitud&#xd;
-from denue_inegi_09_&#xd;
-where cve_mun = &apos;%clave_municipio%&apos;&#xd;
-and substring(fecha_alta, 1, 4) = &apos;%year%&apos;&#xd;
-and codigo_act = &apos;%clave_actividad%&apos;
+        <sql>SELECT&#xd;
+  id, geom, nom_estab, nombre_act, municipio, fecha_alta, latitud, longitud&#xd;
+FROM denue_inegi_09_&#xd;
+WHERE&#xd;
+CAST(cve_mun AS INTEGER) = %claveMunicipio% AND&#xd;
+CAST(codigo_act AS INTEGER) = %claveActividad% AND CAST(SUBSTRING(fecha_alta, 1, 4) AS INTEGER)  BETWEEN %minyear% and %maxyear%&#xd;
+ORDER BY fecha_alta, nom_estab
 </sql>
         <escapeSql>false</escapeSql>
         <geometry>
@@ -65,19 +67,24 @@ and codigo_act = &apos;%clave_actividad%&apos;
           <srid>32614</srid>
         </geometry>
         <parameter>
-          <name>clave_actividad</name>
+          <name>maxyear</name>
+          <defaultValue>2023</defaultValue>
+          <regexpValidator>20[01][0-9]|202[0-3]</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>claveActividad</name>
           <defaultValue>461190</defaultValue>
           <regexpValidator>\d{6}</regexpValidator>
         </parameter>
         <parameter>
-          <name>year</name>
-          <defaultValue>2019</defaultValue>
-          <regexpValidator>^[\w\d\s]+$</regexpValidator>
+          <name>minyear</name>
+          <defaultValue>2018</defaultValue>
+          <regexpValidator>20[01][0-9]|202[0-3]</regexpValidator>
         </parameter>
         <parameter>
-          <name>clave_municipio</name>
-          <defaultValue>005</defaultValue>
-          <regexpValidator>00\d|01[1-3]</regexpValidator>
+          <name>claveMunicipio</name>
+          <defaultValue>003</defaultValue>
+          <regexpValidator>00[2-9]|01[1-3]</regexpValidator>
         </parameter>
       </virtualTable>
     </entry>
