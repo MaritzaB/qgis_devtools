@@ -84,7 +84,7 @@ ORDER BY fecha_alta, nom_estab
         <parameter>
           <name>claveMunicipio</name>
           <defaultValue>003</defaultValue>
-          <regexpValidator>00[2-9]|01[1-3]</regexpValidator>
+          <regexpValidator>00[2-9]|01[1-7]</regexpValidator>
         </parameter>
       </virtualTable>
     </entry>
