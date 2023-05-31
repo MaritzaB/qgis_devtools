@@ -1,0 +1,22 @@
+<layer>
+  <name>ch_coordinates_metrobus_st</name>
+  <id>LayerInfoImpl-18301136:1886f7665c5:-7ffb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-8000</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl-63de631b:18693cecd82:-8000</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-18301136:1886f7665c5:-7ffc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-05-31 03:21:01.60 UTC</dateCreated>
+  <dateModified>2023-05-31 04:04:27.334 UTC</dateModified>
+</layer>
