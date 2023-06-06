@@ -42,7 +42,11 @@
         <name>buffer_800_lineasmetro</name>
         <sql>select&#xd;
 id,&#xd;
-st_transform(st_buffer(st_transform(geom,32614),500),4326) as geom,&#xd;
+st_transform(&#xd;
+  st_buffer(&#xd;
+    st_transform(geom,32614),&#xd;
+  500),&#xd;
+4326) as geom,&#xd;
 sistema, linea, ruta&#xd;
 from &quot;STC_Metro_lineas_utm14n&quot;
 </sql>

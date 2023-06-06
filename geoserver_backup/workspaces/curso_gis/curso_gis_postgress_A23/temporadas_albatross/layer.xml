@@ -1,0 +1,17 @@
+<layer>
+  <name>temporadas_albatross</name>
+  <id>LayerInfoImpl--4c21661a:1888c7a1ec4:-7ffb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-7ffc</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--4c21661a:1888c7a1ec4:-7ffc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-06-05 17:13:26.904 UTC</dateCreated>
+  <dateModified>2023-06-05 17:55:46.882 UTC</dateModified>
+</layer>
