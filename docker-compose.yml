@@ -20,8 +20,6 @@ services:
       - postgis_net
   
   geoserver:
-    build:
-      context: .
     image: kartoza/geoserver:latest
     container_name: geoserver
     ports:
