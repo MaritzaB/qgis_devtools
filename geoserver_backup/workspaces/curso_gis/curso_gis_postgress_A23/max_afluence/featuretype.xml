@@ -1,14 +1,14 @@
 <featureType>
-  <id>FeatureTypeInfoImpl-18301136:1886f7665c5:-79de</id>
-  <name>buffer_800_estacionesmetro</name>
-  <nativeName>buffer_800_estacionesmetro</nativeName>
+  <id>FeatureTypeInfoImpl-54268b58:188d4524c77:-7ea9</id>
+  <name>max_afluence</name>
+  <nativeName>max_afluence</nativeName>
   <namespace>
     <id>NamespaceInfoImpl-63de631b:18693cecd82:-7ff5</id>
   </namespace>
-  <title>buffer_800_estacionesmetro</title>
+  <title>max_afluence</title>
   <keywords>
     <string>features</string>
-    <string>buffer_800_estacionesmetro</string>
+    <string>max_afluence</string>
   </keywords>
   <nativeCRS>GEOGCS[&quot;WGS 84&quot;, 
   DATUM[&quot;World Geodetic System 1984&quot;, 
@@ -19,18 +19,19 @@
   AXIS[&quot;Geodetic longitude&quot;, EAST], 
   AXIS[&quot;Geodetic latitude&quot;, NORTH], 
   AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]</nativeCRS>
-  <srs>EPSG:404000</srs>
+  <srs>EPSG:4326</srs>
   <nativeBoundingBox>
-    <minx>-99.22346456132124</minx>
-    <maxx>-98.95332020164682</maxx>
-    <miny>19.278792350671797</miny>
-    <maxy>19.54174278784254</maxy>
+    <minx>-99.07139903</minx>
+    <maxx>-99.05631558</maxx>
+    <miny>19.33877499</miny>
+    <maxy>19.35304517</maxy>
+    <crs>EPSG:4326</crs>
   </nativeBoundingBox>
   <latLonBoundingBox>
-    <minx>-99.22346456132124</minx>
-    <maxx>-98.95332020164682</maxx>
-    <miny>19.278792350671797</miny>
-    <maxy>19.54174278784254</maxy>
+    <minx>-99.07139903</minx>
+    <maxx>-99.05631558</maxx>
+    <miny>19.33877499</miny>
+    <maxy>19.35304517</maxy>
     <crs>EPSG:4326</crs>
   </latLonBoundingBox>
   <projectionPolicy>FORCE_DECLARED</projectionPolicy>
@@ -38,9 +39,31 @@
   <metadata>
     <entry key="JDBC_VIRTUAL_TABLE">
       <virtualTable>
-        <name>buffer_800_estacionesmetro</name>
-        <sql>SELECT id, st_transform(st_buffer(st_transform(geom,32614),800),4326)  as geom, nombre, linea, est, cve_est, tipo, alcaldias&#xd;
-from &quot;STC_Metro_estaciones_utm14n&quot;
+        <name>max_afluence</name>
+        <sql>select * from denue_inegi_09_ di&#xd;
+where &#xd;
+st_within (geom, (&#xd;
+select geom from(&#xd;
+select m.fecha, m.max_afluencia, t.estacion, getLn(t.linea) as linea,&#xd;
+	em.id, geom as st_geom,&#xd;
+	st_transform(st_buffer(st_transform(em.geom,32614),600),4326)  as geom&#xd;
+	from (select sq.fecha, max(sq.total_afluencia) as max_afluencia&#xd;
+	from(&#xd;
+		select fecha, linea, estacion, sum(afluencia) as total_afluencia&#xd;
+ 		from clase_afluencia_stc cas &#xd;
+ 		group by fecha, linea, estacion) sq&#xd;
+	where sq.fecha = &apos;%date%&apos;&#xd;
+	group by sq.fecha) m&#xd;
+join (&#xd;
+	select fecha, linea, estacion, sum(afluencia) as total_afluencia&#xd;
+	from clase_afluencia_stc cas &#xd;
+	group by fecha, linea, estacion) t&#xd;
+on t.fecha = m.fecha and t.total_afluencia = m.max_afluencia&#xd;
+join&#xd;
+  &quot;STC_Metro_estaciones_utm14n&quot; em&#xd;
+on&#xd;
+  getLn(t.linea) = em.linea and t.estacion = em.nombre&#xd;
+  ) g ))
 </sql>
         <escapeSql>false</escapeSql>
         <geometry>
@@ -48,6 +71,11 @@ from &quot;STC_Metro_estaciones_utm14n&quot;
           <type>Geometry</type>
           <srid>4326</srid>
         </geometry>
+        <parameter>
+          <name>date</name>
+          <defaultValue>2023-03-22</defaultValue>
+          <regexpValidator>20[0-2][0-9]-(0[1-9]|1[12])-(0[1-9]|[12][0-9]|3[0-1])</regexpValidator>
+        </parameter>
       </virtualTable>
     </entry>
     <entry key="cachingEnabled">false</entry>
