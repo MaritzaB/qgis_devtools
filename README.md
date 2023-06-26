@@ -1,5 +1,14 @@
 # qgis_devtools
 
+Para desplegar el servidor con Docker:
+
+```
+$ make up
+```
+
+
+# Material extra
+
 Some videos and material used for this project:
 
 [Postgis with Docker](https://www.youtube.com/watch?v=h-Cr5Ana0GA)
