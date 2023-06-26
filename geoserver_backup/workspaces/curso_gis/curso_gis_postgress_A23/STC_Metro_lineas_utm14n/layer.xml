@@ -1,0 +1,16 @@
+<layer>
+  <name>STC_Metro_lineas_utm14n</name>
+  <id>LayerInfoImpl-63de631b:18693cecd82:-7fec</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-7ff2</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-63de631b:18693cecd82:-7fed</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-02-27 16:59:54.886 UTC</dateCreated>
+</layer>

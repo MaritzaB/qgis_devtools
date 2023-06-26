@@ -1,0 +1,16 @@
+<layer>
+  <name>join_afluencia</name>
+  <id>LayerInfoImpl--788308fb:188b000a5a1:-7ffb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-7ffc</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--788308fb:188b000a5a1:-7ffc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-06-12 14:56:57.594 UTC</dateCreated>
+</layer>

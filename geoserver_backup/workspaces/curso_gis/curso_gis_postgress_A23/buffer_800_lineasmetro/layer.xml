@@ -1,0 +1,22 @@
+<layer>
+  <name>buffer_800_lineasmetro</name>
+  <id>LayerInfoImpl-18301136:1886f7665c5:-7a04</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-7ffe</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl-63de631b:18693cecd82:-7ffe</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-18301136:1886f7665c5:-7a05</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-05-31 04:08:43.334 UTC</dateCreated>
+  <dateModified>2023-05-31 05:05:05.854 UTC</dateModified>
+</layer>
