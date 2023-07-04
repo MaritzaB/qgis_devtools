@@ -24,14 +24,14 @@ dump:
 # de lo contrario, el geoserver no encontrará los datos de las capas (layers).
 
 down:
-	docker-compose down
+	docker compose down
 
 restore:
 	cat $(HOME)/Documents/GitHub/qgis_devtools/database/dump_metro_cdmx.sql \
 	| docker exec -i postgis psql --username=admin --table= denue_inegi_09_ --dbname=metro_cdmx 
 
 run:
-	docker-compose up -d
+	docker compose up -d
 	sleep 5s
 
 up: run restore
