@@ -1,0 +1,107 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3e671594:187f9ad4118:-124f</id>
+  <name>queryAzcapoData</name>
+  <nativeName>queryAzcapoData</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-63de631b:18693cecd82:-7ff5</id>
+  </namespace>
+  <title>queryAzcapoData</title>
+  <abstract>Query para recuperar datos de la alcaldía Azcapotzalco</abstract>
+  <keywords>
+    <string>features</string>
+    <string>queryAzcapoData</string>
+  </keywords>
+  <nativeCRS class="projected">PROJCS[&quot;WGS 84 / UTM zone 14N&quot;, 
+  GEOGCS[&quot;WGS 84&quot;, 
+    DATUM[&quot;World Geodetic System 1984&quot;, 
+      SPHEROID[&quot;WGS 84&quot;, 6378137.0, 298.257223563, AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]], 
+      AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]], 
+    PRIMEM[&quot;Greenwich&quot;, 0.0, AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]], 
+    UNIT[&quot;degree&quot;, 0.017453292519943295], 
+    AXIS[&quot;Geodetic longitude&quot;, EAST], 
+    AXIS[&quot;Geodetic latitude&quot;, NORTH], 
+    AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]], 
+  PROJECTION[&quot;Transverse_Mercator&quot;, AUTHORITY[&quot;EPSG&quot;,&quot;9807&quot;]], 
+  PARAMETER[&quot;central_meridian&quot;, -99.0], 
+  PARAMETER[&quot;latitude_of_origin&quot;, 0.0], 
+  PARAMETER[&quot;scale_factor&quot;, 0.9996], 
+  PARAMETER[&quot;false_easting&quot;, 500000.0], 
+  PARAMETER[&quot;false_northing&quot;, 0.0], 
+  UNIT[&quot;m&quot;, 1.0], 
+  AXIS[&quot;Easting&quot;, EAST], 
+  AXIS[&quot;Northing&quot;, NORTH], 
+  AUTHORITY[&quot;EPSG&quot;,&quot;32614&quot;]]</nativeCRS>
+  <srs>EPSG:32614</srs>
+  <nativeBoundingBox>
+    <minx>-99.17697051</minx>
+    <maxx>-99.05129954</maxx>
+    <miny>19.44552935</miny>
+    <maxy>19.57928239</maxy>
+    <crs>EPSG:4326</crs>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-99.17697051</minx>
+    <maxx>-99.05129954</maxx>
+    <miny>19.44552935</miny>
+    <maxy>19.57928239</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>REPROJECT_TO_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="JDBC_VIRTUAL_TABLE">
+      <virtualTable>
+        <name>queryAzcapoData</name>
+        <sql>SELECT&#xd;
+  id, geom, nom_estab, nombre_act, municipio, fecha_alta, latitud, longitud&#xd;
+FROM denue_inegi_09_&#xd;
+WHERE&#xd;
+CAST(cve_mun AS INTEGER) = %claveMunicipio% AND&#xd;
+CAST(codigo_act AS INTEGER) = %claveActividad% AND CAST(SUBSTRING(fecha_alta, 1, 4) AS INTEGER)  BETWEEN %minyear% and %maxyear%&#xd;
+ORDER BY fecha_alta, nom_estab
+</sql>
+        <escapeSql>false</escapeSql>
+        <geometry>
+          <name>geom</name>
+          <type>Point</type>
+          <srid>32614</srid>
+        </geometry>
+        <parameter>
+          <name>maxyear</name>
+          <defaultValue>2023</defaultValue>
+          <regexpValidator>20[01][0-9]|202[0-3]</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>claveActividad</name>
+          <defaultValue>461190</defaultValue>
+          <regexpValidator>\d{6}</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>minyear</name>
+          <defaultValue>2018</defaultValue>
+          <regexpValidator>20[01][0-9]|202[0-3]</regexpValidator>
+        </parameter>
+        <parameter>
+          <name>claveMunicipio</name>
+          <defaultValue>003</defaultValue>
+          <regexpValidator>00[2-9]|01[1-7]</regexpValidator>
+        </parameter>
+      </virtualTable>
+    </entry>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-63de631b:18693cecd82:-7ff4</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <simpleConversionEnabled>false</simpleConversionEnabled>
+  <internationalTitle/>
+  <internationalAbstract/>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

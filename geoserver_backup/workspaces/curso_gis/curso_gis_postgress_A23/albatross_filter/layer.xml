@@ -1,0 +1,16 @@
+<layer>
+  <name>albatross_filter</name>
+  <id>LayerInfoImpl-21cd8ab8:188688f1d6f:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-63de631b:18693cecd82:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-21cd8ab8:188688f1d6f:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-05-29 17:58:10.26 UTC</dateCreated>
+</layer>

@@ -1,0 +1,22 @@
+<layer>
+  <name>gps-albatros-isla-guadalupe</name>
+  <id>LayerInfoImpl-bde50b8:187c3d38b2a:-7ff2</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-bde50b8:187c3d38b2a:-7ff1</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl-bde50b8:187c3d38b2a:-7ff1</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-bde50b8:187c3d38b2a:-7ff3</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2023-04-27 18:04:03.290 UTC</dateCreated>
+  <dateModified>2023-04-27 18:05:15.34 UTC</dateModified>
+</layer>
