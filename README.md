@@ -1,5 +1,12 @@
 # qgis_devtools
 
+Repositorio para levantar un servidor de Geoserver.
+La tecnologías usadas son:
+
+- Postgress
+- Postgis
+- Geoserver
+
 Para desplegar el servidor con Docker:
 
 ```
